@@ -12,14 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Need this one to load single page application
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('products', 'ProductController@index');
-Route::get('products/{product}', 'ProductController@find');
-Route::post('products','ProductsController@store');
-Route::put('products/{product}','ProductsController@update');
-Route::delete('products/{product}', 'ProductsController@delete');
 

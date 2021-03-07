@@ -4,6 +4,7 @@ const IsLoading = function(props) {
     isLoading,
     children,
   } = props;
+  
   if (isLoading) return '';
   return children;
 }

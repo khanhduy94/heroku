@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import BootstrapTable from 'react-bootstrap-table-next';
 import { getAll } from '../RequestApiUtils';
 import IsLoading from '../BasedComponent/IsLoading';
+import { isArray } from 'lodash';
 
 export default class Home extends Component {
   constructor(props) {
@@ -15,10 +16,17 @@ export default class Home extends Component {
   componentDidMount() {
     this.state.isLoading = true;
     getAll('products').then((products) => {
+      let resultProducts = [];
+      
+      if (isArray(products)) {
+        resultProducts = products
+      }
+
       this.setState({
-        products,
+        products: resultProducts,
         isLoading: false,
       });
+
     });
   }
 
