@@ -59,6 +59,6 @@ class UserController extends Controller
         $newUsers->created_at = time();
 
         $newUsers->save();
-        return response()->json(null, 201);
+        return response()->json('Success', 201);
     }
 }
